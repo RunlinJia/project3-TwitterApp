@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import NavBar from './components/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    // Dummy state for user login status and username
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [username, setUsername] = useState('');
+
+    // ... other logic and routes
+
+    return (
+        <Router>
+            <NavBar isLoggedIn={isLoggedIn} username={username} />
+            {/* ... other components and routes */}
+        </Router>
+    );
+};
 
 export default App;
